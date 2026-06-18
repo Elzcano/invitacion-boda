@@ -1,4 +1,6 @@
-/* Paleta de Colores Natural (Invernadero) */
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL Y PALETA DE COLORES (INVERNADERO)
+   ========================================================================== */
 :root {
     --color-oliva-oscuro: #4a5d23; 
     --color-oliva-claro: #889c6d;  
@@ -8,6 +10,14 @@
     
     --fuente-titulo: 'Cormorant Garamond', serif;
     --fuente-texto: 'Montserrat', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body.bloqueado {
+    overflow: hidden;
 }
 
 body {
@@ -31,44 +41,67 @@ h1, h2, h3 {
     color: var(--color-oliva-oscuro);
 }
 
-/* Monograma flotante en la esquina superior izquierda */
+/* ==========================================================================
+   COMPONENTES FLOTANTES (MONOGRAMA Y MÚSICA)
+   ========================================================================== */
 .monograma {
     font-family: var(--fuente-titulo);
-    font-size: 1.6rem; /* Bajado un poco para compensar el recuadro */
+    font-size: 1.6rem;
     font-weight: 300;
-    color: #ffffff; /* Tus letras blancas se mantienen */
+    color: #ffffff;
     letter-spacing: 3px;
-    
     position: fixed;
-    top: 20px; /* Ajustado para que visualmente flote mejor con el fondo */
+    top: 20px;
     left: 25px; 
     z-index: 100; 
-
-    /* NUEVO: EFECTO VIDRIO OSCURO PROTECTOR */
-    background: rgba(0, 0, 0, 0.45); /* Capa oscura suave */
-    backdrop-filter: blur(8px);       /* Desenfoca lo que pasa por detrás */
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);      
     -webkit-backdrop-filter: blur(8px);
     padding: 8px 18px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    
 }
 
-/* Hero / Portada */
+.boton-musica {
+    position: fixed;
+    top: 30px;              
+    right: 40px;            
+    z-index: 9999;          
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(136, 156, 109, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.boton-musica:hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+    color: var(--color-oliva-oscuro);
+}
+
+/* ==========================================================================
+   HERO / PORTADA PRINCIPAL
+   ========================================================================== */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* CAPA MARFIL: Suaviza la foto en blanco y negro para que el texto resalte */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
                 url('foto3b.jpeg') no-repeat center center/cover;
     padding: 20px;
     box-sizing: border-box;
-    /* EFECTO DE DESATURACIÓN */
-    filter: saturate(0.5); /* 1 es original, 0 es blanco y negro. 0.5 reduce la saturación al 50% */
+    filter: saturate(0.5);
 }
 
 .hero p.subtitulo {
@@ -81,7 +114,7 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-    color: #ffffff; /* Título principal en blanco */
+    color: #ffffff;
     font-size: 4rem;
     margin-bottom: 20px;
     margin-top: 0;
@@ -100,7 +133,9 @@ h1, h2, h3 {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Cuenta Regresiva */
+/* ==========================================================================
+   SECCIÓN CUENTA REGRESIVA
+   ========================================================================== */
 .cuenta-regresiva-seccion {
     background-color: #f1ede1;
     padding: 60px 20px;
@@ -117,29 +152,27 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;            /* Espacio optimizado entre bloques para pantallas chicas */
-    flex-wrap: wrap;      /* Permite que los bloques bajen si la pantalla es muy angosta */
+    gap: 10px;            
+    flex-wrap: wrap;      
     max-width: 600px;
     margin: 0 auto;
     padding: 10px;
 }
 
 .tiempo-bloque {
-   background: white;
-    padding: 15px 10px;   /* Padding interno más sutil para que respire en móviles */
-    border-radius: 8px;   /* Bordes ligeramente redondeados para un look moderno */
+    background: white;
+    padding: 25px 15px;   
+    border-radius: 8px;   
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    
-    /* TRUCO PARA MÓVILES: */
-    flex: 1;              /* Se distribuyen el espacio disponible por igual */
-    min-width: 70px;      /* Ancho mínimo justo para albergar los números sin romperse */
-    max-width: 110px;     /* Evita que se hagan gigantes en pantallas de computadora */
+    flex: 1;              
+    min-width: 75px;      
+    max-width: 110px;     
     text-align: center;
 }
 
 .tiempo-bloque span {
     display: block;
-    font-size: 1.8rem;    /* Tamaño ideal y legible en móviles */
+    font-size: 1.8rem;    
     font-weight: 600;
     color: var(--color-oliva-oscuro);
     line-height: 1.2;
@@ -147,22 +180,16 @@ h1, h2, h3 {
 
 .tiempo-bloque small {
     display: block;
-    font-size: 0.75rem;   /* Letra pequeña y elegante para las etiquetas (Días, Horas, etc.) */
+    font-size: 0.75rem;   
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #666;
     margin-top: 5px;
 }
 
-.tiempo-bloque {
-    background: white;
-    padding: 25px 15px; /* Ajustado el padding interno */
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    min-width: 75px; /* Reducido de 95px a 75px para que quepan los 4 bloques en móviles */
-}
-
-/* Detalles del Evento */
+/* ==========================================================================
+   SECCIÓN DETALLES DEL EVENTO
+   ========================================================================== */
 .detalles {
     max-width: 800px;
     margin: 0 auto;
@@ -172,6 +199,17 @@ h1, h2, h3 {
     font-size: 2.8rem;
     margin-bottom: 40px;
     margin-top: 0;
+}
+
+.contenedor-bloques-detalles {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .tarjeta-unificada {
@@ -217,7 +255,22 @@ h1, h2, h3 {
     margin-bottom: 5px;
 }
 
-/* Botones Generales */
+.bloque-lluvia-sobres {
+    margin: 20px 0;
+    border-top: 1px dashed var(--color-tierra-suave);
+    border-bottom: 1px dashed var(--color-tierra-suave);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.icono-sobre {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--color-oliva-claro);
+    margin-bottom: 10px;
+}
+
+/* BOTONES GENERALES */
 .boton {
     display: inline-block;
     background-color: var(--color-oliva-oscuro);
@@ -240,7 +293,9 @@ h1, h2, h3 {
     transform: scale(1.03);
 }
 
-/* ESTILOS DE LA GALERÍA CON CARRUSEL */
+/* ==========================================================================
+   SECCIÓN GALERÍA (CARRUSEL)
+   ========================================================================== */
 .galeria {
     max-width: 100%;
     overflow: hidden;
@@ -262,35 +317,31 @@ h1, h2, h3 {
     font-style: italic;
 }
 
-/* Envoltura del Carrusel posicionada */
 .contenedor-carrusel {
     position: relative;
-    max-width: 500px; /* Tamaño ideal en computadoras y móviles */
+    max-width: 500px; 
     margin: 0 auto;
     padding: 0 10px;
 }
 
-/* Tira interna deslizable */
 .carrusel {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Oculta barra en Firefox */
+    scrollbar-width: none; 
     gap: 15px;
     border-radius: 8px;
 }
 
-/* Oculta barra en Chrome/Safari */
 .carrusel::-webkit-scrollbar {
     display: none;
 }
 
-/* Cada Contenedor de Foto */
 .tarjeta-foto {
-    flex: 0 0 100%; /* Cada imagen toma el ancho entero de la caja */
+    flex: 0 0 100%; 
     scroll-snap-align: center;
-    aspect-ratio: 2 / 3; /* Formato vertical elegante */
+    aspect-ratio: 2 / 3; 
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -302,7 +353,6 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/* Flechas Flotantes de Navegación */
 .flecha {
     position: absolute;
     top: 50%;
@@ -331,7 +381,9 @@ h1, h2, h3 {
 .flecha-izq { left: -20px; }
 .flecha-der { right: -20px; }
 
-/* Sección RSVP y Formulario Incrustado */
+/* ==========================================================================
+   SECCIÓN RSVP / CONFIRMACIÓN
+   ========================================================================== */
 .rsvp {
     background-color: #f7f6f1;
 }
@@ -359,7 +411,7 @@ h1, h2, h3 {
     overflow: hidden;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     padding: 50px;
     background-color: var(--color-tierra-suave);
@@ -369,147 +421,47 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Ajustes Responsivos Móvil */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.8rem; }
-    section { padding: 60px 20px; }
-    .detalles h2, .galeria h2, .rsvp h2 { font-size: 2.3rem; }
-    .bloque-horario { gap: 20px; font-size: 0.95rem; }
-    .tarjeta-unificada { padding: 35px 20px; }
-    .contenedor-iframe { margin-top: 25px; padding: 0; }
-    .flecha { width: 40px; height: 40px; font-size: 1rem; }
-    .flecha-izq { left: 5px; }
-    .flecha-der { right: 5px; }
-
-    .monograma {
-        font-size: 1.4rem;
-        top: 20px;                     /* Más pegado al borde en pantallas chicas */
-        left: 20px;
-        letter-spacing: 2px;
-    }
-
-    .boton-musica {
-        top: 20px;
-        right: 20px;        /* Se junta un poco más al borde en pantallas chicas */
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-
-    /* Ajustes para el contenedor de la carta */
-    .carta-boda {
-        width: 90%;            /* Ocupa el 90% de la pantalla para dejar un margen fino a los lados */
-        max-width: 380px;      /* Evita que se haga gigante */
-        padding: 40px 20px;    /* Espaciado interno cómodo para el texto */
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        box-sizing: border-box; /* Evita que el padding sume tamaño extra al ancho */
-    }
-
-    /* Reducir el tamaño del monograma para que no ocupe varias líneas */
-    .monograma-bienvenida {
-        font-size: 2.4rem;     /* Letra un poco más pequeña y estilizada */
-        letter-spacing: 4px;   /* Reduce ligeramente el espacio entre letras */
-        margin-bottom: 5px;
-    }
-
-   /* ¡CLAVE! Hacemos la línea responsiva en porcentaje, no en píxeles fijos */
-    .linea-divisoria {
-        width: 60%;            /* Ya no mide 390px, ahora se adapta al tamaño de la carta */
-        max-width: 200px;
-        margin: 15px auto;     /* Centrada perfectamente */
-
-    /* Ajuste del texto de la invitación */
-    .contenido-bienvenida p {
-        font-size: 0.85rem;    
-        letter-spacing: 2.5px;   
-        line-height: 1.6;
-        margin-bottom: 25px;
-    }
-
-    /* Ajuste del botón "ABRIR INVITACIÓN" */
-    .carta-boda .boton {
-        width: 100%;           /* Hace que el botón ocupe todo el ancho disponible de la carta, siendo más fácil de presionar con el pulgar */
-        padding: 14px 20px;    /* Altura cómoda para el toque táctil */
-        font-size: 0.8rem;
-    }
-}
-
-.contenedor-bloques-detalles {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.bloque-lluvia-sobres {
-    margin: 20px 0;
-    border-top: 1px dashed var(--color-tierra-suave);
-    border-bottom: 1px dashed var(--color-tierra-suave);
-    padding: 20px 0;
-    text-align: center;
-}
-
-.icono-sobre {
-    display: block;
-    font-size: 2.2rem;
-    color: var(--color-oliva-claro);
-    margin-bottom: 10px;
-}
-
 /* ==========================================================================
    PANTALLA DE BIENVENIDA (TELÓN DE ENTRADA)
    ========================================================================== */
-/* Bloquea el scroll de la invitación al inicio */
-html, body {
-    overflow-x: hidden;
-}
-body.bloqueado {
-    overflow: hidden;
-}
-
 .pantalla-bienvenida {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--color-marfil); /* Mismo fondo de tu paleta */
-    z-index: 10000; /* Por encima de absolutamente todo */
+    background-color: var(--color-marfil); 
+    z-index: 10000; 
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 0.8s ease, visibility 0.8s ease;
-    
 }
 
-/* EL SOBRE / CARTA FISICA */
+.pantalla-bienvenida.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .carta-boda {
     position: relative;
     z-index: 2;
-    background-color: #fdfbf7; /* Color papel marfil texturizado suave */
+    background-color: #fdfbf7; 
     width: 90%;
-    max-width: 450px; /* Tamaño ideal de un sobre de invitación */
+    max-width: 450px; 
     padding: 40px 30px;
-    border-radius: 4px; /* Esquinas apenas redondeadas como las tarjetas reales */
-    
-    /* Súper importante: Sombras que simulan relieve y profundidad física */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 
-                0 1px 3px rgba(0, 0, 0, 0.05);
-    
-    /* Borde interno elegante */
+    border-radius: 4px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(136, 156, 109, 0.2); 
-    
-    /* Animación de entrada suave de la carta */
     animation: flotarCarta 1.2s ease-out;
 }
 
 .contenido-bienvenida {
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .monograma-bienvenida {
@@ -521,12 +473,12 @@ body.bloqueado {
     letter-spacing: 5px;
 }
 
-/* Detalle: Línea fina horizontal elegante debajo del monograma */
 .linea-divisoria {
-    width: 390px;
+    width: 60%;
+    max-width: 200px;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.2);
-    margin: 15px 0;
+    margin: 15px auto; 
 }
 
 .contenido-bienvenida p {
@@ -538,13 +490,7 @@ body.bloqueado {
     margin-bottom: 30px;
 }
 
-/* Clase que se activa con JS para desaparecer la pantalla con suavidad */
-.pantalla-bienvenida.ocultar {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Ajuste del botón para que parezca el sello del sobre */
+/* Botón específico de la Pantalla de Entrada */
 .carta-boda .boton {
     background-color: #000000;
     color: #ffffff;
@@ -559,12 +505,11 @@ body.bloqueado {
 }
 
 .carta-boda .boton:hover {
-    background-color: var(--color-oliva-oscuro); /* Cambia a tu oliva al pasar el mouse */
+    background-color: var(--color-oliva-oscuro); 
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* Animación sutil al cargar la página */
 @keyframes flotarCarta {
     from {
         opacity: 0;
@@ -576,38 +521,67 @@ body.bloqueado {
     }
 }
 
-/* Desvanecimiento de todo el telón al presionar abrir */
-.pantalla-bienvenida.ocultar {
-    opacity: 0;
-    visibility: hidden;
-}
-
 /* ==========================================================================
-   BOTÓN DE MÚSICA FLOTANTE (ARRIBA A LA DERECHA)
+   AJUSTES RESPONSIVOS MÓVIL (MÁXIMO 768PX)
    ========================================================================== */
-.boton-musica {
-    position: fixed;
-    top: 30px;              /* Distancia desde el borde superior */
-    right: 40px;            /* CAMBIO: Fijado a la derecha de la pantalla */
-    z-index: 9999;          /* Se mantiene por encima de todo al bajar */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    section { padding: 60px 20px; }
+    .detalles h2, .galeria h2, .rsvp h2 { font-size: 2.3rem; }
+    .bloque-horario { gap: 20px; font-size: 0.95rem; }
+    .tarjeta-unificada { padding: 35px 20px; }
+    .contenedor-iframe { margin-top: 25px; padding: 0; }
     
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9); /* Blanco sutilmente transparente */
-    border: 1px solid rgba(136, 156, 109, 0.3);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    cursor: pointer;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
+    .flecha { width: 40px; height: 40px; font-size: 1rem; }
+    .flecha-izq { left: 5px; }
+    .flecha-der { right: 5px; }
 
-.boton-musica:hover {
-    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el mouse */
-    background-color: var(#ffffff);
-    color: white;
+    .monograma {
+        font-size: 1.4rem;
+        top: 20px;                    
+        left: 20px;
+        letter-spacing: 2px;
+    }
+
+    .boton-musica {
+        top: 20px;
+        right: 20px;        
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    /* Ajustes para la carta física en móvil */
+    .carta-boda {
+        width: 90%;            
+        max-width: 380px;      
+        padding: 40px 20px;    
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box; 
+    }
+
+    .monograma-bienvenida {
+        font-size: 2.4rem;     
+        letter-spacing: 4px;   
+        margin-bottom: 5px;
+    }
+
+    .linea-divisoria {
+        width: 60%;            
+        max-width: 200px;
+        margin: 15px auto; 
+    }    
+
+    .contenido-bienvenida p {
+        font-size: 0.85rem;    
+        letter-spacing: 2.5px;   
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .carta-boda .boton {
+        width: 100%;           
+        padding: 14px 20px;    
+        font-size: 0.8rem;
+    }
 }
