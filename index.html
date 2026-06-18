@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Edu & Liz</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+    <div id="pantalla-bienvenida" class="pantalla-bienvenida">
+        <div class="capa-filtro"></div>
+        <div class="carta-boda">
+        <div class="contenido-bienvenida">
+            <span class="monograma-bienvenida">E & L</span>
+            <div class="linea-divisoria"></div>
+            <p>Estás invitado a nuestra celebración</p>
+            <button class="boton" onclick="comenzarExperiencia()">ABRIR INVITACIÓN</button>
+           </div> 
+        </div>
+    </div>
+
+    <div class="monograma">E & L</div>
+    <audio id="musica-boda" src="It's You (Inst.).mp3" loop></audio>
+
+    <button id="btn-musica" class="boton-musica" onclick="controlarMusica()">
+        <span id="icono-musica">🎵</span>
+    </button>
+
+    <section class="hero">
+        
+        <p class="subtitulo">¡Nos Casamos!</p>
+        <h1>Edu & Liz</h1>
+        <div class="fecha-portada">03 . OCTUBRE . 2026</div>
+    </section>
+
+    <section class="cuenta-regresiva-seccion">
+    <h2>Faltan muy pocos días...</h2>
+    <div class="cuenta-regresiva">
+        <div class="tiempo-bloque">
+            <span id="dias">00</span>
+            <small>Días</small>
+        </div>
+        <div class="tiempo-bloque">
+            <span id="horas">00</span>
+            <small>Horas</small>
+        </div>
+        <div class="tiempo-bloque">
+            <span id="minutos">00</span>
+            <small>Minutos</small>
+        </div>
+        <div class="tiempo-bloque">
+            <span id="segundos">00</span>
+            <small>Segundos</small>
+        </div>
+    </div>
+</section>
+
+    <section class="detalles">
+        <h2>Dónde y Cuándo</h2>
+        
+        <div class="tarjeta-unificada">
+            <h3>El Gran Día</h3>
+            <p>Acompáñanos a celebrar nuestra unión en este mágico lugar.</p>
+            
+            <div class="bloque-horario">
+                <div>
+                    <p><strong>Ceremonia</strong></p>
+                    <p>2:00 PM</p>
+                </div>
+                <div class="linea-separadora">
+                    <p><strong>Recepción</strong></p>
+                    <p>Inmediata</p>
+                </div>
+            </div>
+            
+            <p class="nombre-lugar">El Darien Chalet</p>
+            <p>Cra. 9 #12-47 Cota - Cundinamarca</p>
+            <p>El Darién</p>
+            
+            <a href="https://www.google.com/maps/place/CHALET+EL+DARIÉN/@4.8132899,-74.1046042,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f878922f4f635:0x789a9aa20fa0102c!8m2!3d4.8132899!4d-74.1046042!16s%2Fg%2F11flgfpl5r?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="boton">Ver Ubicación</a>
+        </div>
+        
+    </section>
+
+    <section class="detalles">
+        <div class="tarjeta-unificada">
+        <h3>Detalles Especiales</h3>
+                <p>Queremos que disfrutes al máximo cada instante de nuestra celebración.</p>
+    
+        <div class="bloque-horario">
+        <div>
+            <p><strong>Código de Vestimenta</strong></p>
+            <p>Formal / Traje Largo</p>
+        </div>
+    </div>
+    
+    <p class="nombre-lugar">Sugerencia de Color</p>
+    <p>Nos encantaría verlos lucir colores inspirados en la naturaleza.</p>
+    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+        * Reservado con mucho amor exclusivamente para adultos.
+    </p>
+        </div>
+
+    </section>
+
+    <section class="detalles">
+     <div class="tarjeta-unificada">
+            <h3>Regalo de Bodas</h3>
+            <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un detalle, te contamos que tendremos:</p>
+            <div class="bloque-lluvia-sobres">
+                <span class="icono-sobre">✉</span>
+                <p><strong>LLUVIA DE SOBRES</strong></p>
+                <p>Dispondremos de un cofre en el salón para recibir tus mejores deseos en efectivo.</p>
+            </div>
+            <p style="font-size: 0.85rem; color: #777; margin-top: auto;">
+                ¡Gracias por ayudarnos a construir nuestro nuevo hogar!
+            </p>
+        </div>
+
+    </div>   
+
+    </section>
+        
+    <section class="galeria">
+        <h2>Nuestros Momentos</h2>
+        <p class="introduccion">Un pedacito de nuestra historia...</p>
+        
+        <div class="contenedor-carrusel">
+            <button class="flecha flecha-izq" id="btnAnt" aria-label="Foto anterior">&#10094;</button>
+            
+            <div class="carrusel" id="carruselFotos">
+                <div class="tarjeta-foto">
+                    <img src="foto6.jpeg" alt="Alejandro y Sofía - Foto 1">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto1.jpeg" alt="Alejandro y Sofía - Foto 2">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto8.jpeg" alt="Alejandro y Sofía - Foto 3">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto5.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto9.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto10.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto2.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto11.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="foto12.jpeg" alt="Alejandro y Sofía - Foto 4">
+                </div>
+                
+            </div>
+            
+            <button class="flecha flecha-der" id="btnSig" aria-label="Siguiente foto">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="rsvp">
+        <h2>¿Nos acompañas?</h2>
+        <p class="texto-limite">
+            Por favor, confímanos tu asistencia antes del <strong>3 de Septiembre de 2026</strong>. ¡Estamos muy emocionados de compartir este día contigo!
+        </p>
+        
+        <div class="contenedor-iframe">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc54JMBJ4WExpE60xFCwijx7i1TzjwUkqN3U_XizApZ6yszGQ/viewform?usp=dialog" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Cargando formulario...</iframe>
+        </div>
+    </section>
+
+    <footer>
+        Gracias por ser parte de nuestra historia
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
