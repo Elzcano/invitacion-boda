@@ -380,6 +380,7 @@ footer {
     .flecha { width: 40px; height: 40px; font-size: 1rem; }
     .flecha-izq { left: 5px; }
     .flecha-der { right: 5px; }
+
     .monograma {
         font-size: 1.4rem;
         top: 20px;                     /* Más pegado al borde en pantallas chicas */
@@ -397,28 +398,31 @@ footer {
 
     /* Ajustes para el contenedor de la carta */
     .carta-boda {
-        width: 88%;            /* Toma el 88% del ancho de la pantalla para dejar un margen sutil a los lados */
-        padding: 30px 20px;    /* Reduce el espacio interno para que el texto tenga más lugar */
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Sombra un poco más suave en celular */
+        width: 90%;            /* Ocupa el 90% de la pantalla para dejar un margen fino a los lados */
+        max-width: 380px;      /* Evita que se haga gigante */
+        padding: 40px 20px;    /* Espaciado interno cómodo para el texto */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box; /* Evita que el padding sume tamaño extra al ancho */
     }
 
     /* Reducir el tamaño del monograma para que no ocupe varias líneas */
     .monograma-bienvenida {
-        font-size: 2.2rem;     /* Letra un poco más pequeña y estilizada */
+        font-size: 2.4rem;     /* Letra un poco más pequeña y estilizada */
         letter-spacing: 4px;   /* Reduce ligeramente el espacio entre letras */
-        margin-bottom: 2px;
+        margin-bottom: 5px;
     }
 
-    /* Ajuste de la línea divisoria */
+   /* ¡CLAVE! Hacemos la línea responsiva en porcentaje, no en píxeles fijos */
     .linea-divisoria {
-        width: 45px;
-        margin: 12px 0;
-    }
+        width: 60%;            /* Ya no mide 390px, ahora se adapta al tamaño de la carta */
+        max-width: 200px;
+        margin: 15px auto;     /* Centrada perfectamente */
 
-    /* Ajuste del texto de invitación */
+    /* Ajuste del texto de la invitación */
     .contenido-bienvenida p {
-        font-size: 0.8rem;     /* Texto un poco más compacto */
-        letter-spacing: 3px;   /* Espaciado de letras apto para pantallas chicas */
+        font-size: 0.85rem;    
+        letter-spacing: 2.5px;   
+        line-height: 1.6;
         margin-bottom: 25px;
     }
 
