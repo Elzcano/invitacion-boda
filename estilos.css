@@ -24,7 +24,7 @@ body.bloqueado {
 
 body {
     font-family: var(--fuente-texto);
-    background-color: var(--color-marfil);
+    background-color: #d7c9b1;
     color: var(--color-texto-oscuro);
     line-height: 1.7;
     text-align: center;
