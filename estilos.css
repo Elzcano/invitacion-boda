@@ -587,4 +587,52 @@ footer {
         padding: 14px 20px;    
         font-size: 0.8rem;
     }
+
+    .banner-encuesta-pequeno {
+        aspect-ratio: 17 / 8;
+        /* Puedes ajustar también el porcentaje en el celular si es necesario */
+        background-position: center 80%; 
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .contenedor-iframe {
+        /* Un pequeño margen a los lados en móvil para que no toque los bordes de la pantalla */
+        margin: 20px 15px; 
+        border-radius: 16px; 
+    }
+}
+
+/* Contenedor principal de la encuesta */
+.contenedor-iframe {
+    max-width: 750px; /* Ancho ideal para que no se vea gigante */
+    width: 100%;
+    margin: 40px auto 0;
+    background: #ffffff;
+    border-radius: 16px; /* Bordes redondeados modernos */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06); /* Sombra suave */
+    overflow: hidden; /* Clave: hace que el banner herede los bordes redondeados */
+    box-sizing: border-box;
+}
+
+/* El banner pequeño arriba del formulario */
+.banner-encuesta-pequeno {
+    width: 100%;
+    aspect-ratio: 17 / 6.5; /* Mantiene la proporción panorámica de alta calidad */
+    
+    /* CAMBIA AQUÍ: Cambiamos 'center center' por 'center 20%' */
+    background: url('foto14.jpeg') no-repeat center 80%;
+    
+    background-size: cover; 
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Ajuste del iframe para que se pegue al banner sin espacios raros */
+.contenedor-iframe iframe {
+    width: 100%;
+    border: none;
+    display: block; /* Elimina espacios vacíos inline */
 }
