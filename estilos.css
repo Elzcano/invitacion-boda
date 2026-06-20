@@ -525,6 +525,105 @@ footer {
     }
 }
 
+/* Contenedor principal de la encuesta */
+.contenedor-iframe {
+    max-width: 750px; /* Ancho ideal para que no se vea gigante */
+    width: 100%;
+    margin: 40px auto 0;
+    background: #ffffff;
+    border-radius: 16px; /* Bordes redondeados modernos */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06); /* Sombra suave */
+    overflow: hidden; /* Clave: hace que el banner herede los bordes redondeados */
+    box-sizing: border-box;
+}
+
+/* El banner pequeño arriba del formulario */
+.banner-encuesta-pequeno {
+    width: 100%;
+    aspect-ratio: 17 / 6.5; /* Mantiene la proporción panorámica de alta calidad */
+    
+    /* CAMBIA AQUÍ: Cambiamos 'center center' por 'center 20%' */
+    background: url('foto14.jpeg') no-repeat center 80%;
+    
+    background-size: cover; 
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Ajuste del iframe para que se pegue al banner sin espacios raros */
+.contenedor-iframe iframe {
+    width: 100%;
+    border: none;
+    display: block; /* Elimina espacios vacíos inline */
+}
+
+/* =================================================================
+   ESTILOS DEL PIE DE PÁGINA (FOOTER)
+   ================================================================= */
+.pie-pagina-boda {
+    padding: 60px 20px 30px;
+    text-align: center;
+    background-color: transparent; /* Mantiene el color sutil de fondo de la web */
+    margin-top: 50px;
+}
+
+/* Una línea divisoria muy fina y elegante */
+.divisor-footer {
+    max-width: 150px;
+    height: 1px;
+    background-color: var(--color-oro-suave, #d4af37); /* O un color tierra suave */
+    margin: 0 auto 30px;
+    opacity: 0.5;
+}
+
+.monograma-footer {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif; /* Tu tipografía elegante */
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--color-texto-oscuro, #333);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.frase-final {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+}
+
+/* Texto de niños o etiqueta en un tono más suave y tamaño discreto */
+.nota-adultos {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.creditos-footer {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .pie-pagina-boda {
+        padding: 40px 15px 20px;
+    }
+    .frase-final {
+        font-size: 1rem;
+    }
+}
+
 /* ==========================================================================
    AJUSTES RESPONSIVOS MÓVIL (MÁXIMO 768PX)
    ========================================================================== */
@@ -601,38 +700,4 @@ footer {
         margin: 20px 15px; 
         border-radius: 16px; 
     }
-}
-
-/* Contenedor principal de la encuesta */
-.contenedor-iframe {
-    max-width: 750px; /* Ancho ideal para que no se vea gigante */
-    width: 100%;
-    margin: 40px auto 0;
-    background: #ffffff;
-    border-radius: 16px; /* Bordes redondeados modernos */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06); /* Sombra suave */
-    overflow: hidden; /* Clave: hace que el banner herede los bordes redondeados */
-    box-sizing: border-box;
-}
-
-/* El banner pequeño arriba del formulario */
-.banner-encuesta-pequeno {
-    width: 100%;
-    aspect-ratio: 17 / 6.5; /* Mantiene la proporción panorámica de alta calidad */
-    
-    /* CAMBIA AQUÍ: Cambiamos 'center center' por 'center 20%' */
-    background: url('foto14.jpeg') no-repeat center 80%;
-    
-    background-size: cover; 
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-/* Ajuste del iframe para que se pegue al banner sin espacios raros */
-.contenedor-iframe iframe {
-    width: 100%;
-    border: none;
-    display: block; /* Elimina espacios vacíos inline */
 }
