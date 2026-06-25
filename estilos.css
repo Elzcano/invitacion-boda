@@ -624,6 +624,37 @@ footer {
     }
 }
 
+.contenedor-burbujas-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio elegante entre círculos */
+    flex-wrap: wrap; /* Si la pantalla es muy chica, se acomodan solos */
+}
+
+/* Esferas de color de la imagen */
+.burbuja-color {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Sombra suave para dar volumen */
+    border: 2px solid #ffffff; /* Borde blanco fino estilo editorial */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto elegante cuando pasan el dedo o el mouse por encima */
+.burbuja-color:hover {
+    transform: scale(1.1);
+}
+
+.divisor-decorativo {
+    max-width: 80px;
+    height: 1px;
+    background-color: var(--color-tierra-suave, #d7c9b1);
+    margin: 0 auto 40px;
+    opacity: 0.6;
+}
+
 /* ==========================================================================
    AJUSTES RESPONSIVOS MÓVIL (MÁXIMO 768PX)
    ========================================================================== */
@@ -699,5 +730,13 @@ footer {
         /* Un pequeño margen a los lados en móvil para que no toque los bordes de la pantalla */
         margin: 20px 15px; 
         border-radius: 16px; 
+    }
+
+    .burbuja-color {
+        width: 45px;
+        height: 45px;
+    }
+    .contenedor-burbujas-color {
+        gap: 15px;
     }
 }
